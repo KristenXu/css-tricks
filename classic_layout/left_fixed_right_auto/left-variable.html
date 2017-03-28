@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>左侧固定，右侧自适应</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        /* 两列右侧自适应布局 */
+        .left-fixed_right-auto{
+            width: 100%;
+            height: 200px;
+            clear: both;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .left{
+            position:relative;
+            float:left;
+            /* width:200px; */
+            height: 100%;
+            /* margin-right:-200px; */
+            background: red;
+        }
+        .right{
+            float:right;
+            width:100%;
+            height: 100%;
+            background: pink;
+        }
+        .right-content{
+            /* margin-left:200px; */
+            height: 100%;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<h1>左侧固定，右侧自适应布局</h1>
+<div class="left-fixed_right-auto">
+    <div class="left">
+        左侧定宽左侧定宽左侧定宽左侧定宽左侧定宽左侧定宽
+        <div>
+            <button class="toggle-btn">收起</button>
+        </div>
+    </div>
+    <div class="right">
+        <div class="right-content">
+            右侧自适应,这是会自动换行的换行的换行的发动发动发扥扥这是会自动换行的换行的换行的发动发动发扥扥这是会自动换行的换行的换行的发动发动发扥扥这是会自动换行的换行的换行的发动发动发扥扥
+        </div>
+    </div>
+</div>
+<script>
+    var doc=document,
+
+        /**
+         * [flag 当前展示宽度状态，true:使用最大宽度;false:使用最小宽度。默认是使用最大宽度]
+         * @type {Boolean}
+         */
+        flag=true,
+
+        /**
+         * [maxWidth，minWidth 分别是左侧的最大和最小宽度]
+         * @type {String}
+         */
+        maxWidth="200px",
+        minWidth="50px",
+
+        //左侧按钮容器
+        btnContainer=doc.querySelector(".toggle-btn"),
+
+        //左侧容器和右侧容器，实际上就只需要操作这两个元素
+        leftContainer=doc.querySelector(".left"),
+        rightContent=doc.querySelector(".right-content"),
+
+        /**
+         * 切换宽度大小
+         * @param {String}   width 左侧需要显示的宽度(带px)
+         */
+        setToggleLayout=function(width){
+            leftContainer.style.width=width;
+            leftContainer.style.marginRight="-"+width;
+
+            rightContent.style.marginLeft=width;
+        };
+
+    //初始化先调用一下，根据前面定义的规则，默认显示最大宽度
+    setToggleLayout(flag ? maxWidth : minWidth);
+
+    //点击按钮切换大小
+    btnContainer.onclick=function(){
+        flag=!flag;
+        setToggleLayout(flag ? maxWidth : minWidth);
+        btnContainer.innerHTML=flag ? "收起" : "展开";
+    };
+</script>
+</body>
+</html>
