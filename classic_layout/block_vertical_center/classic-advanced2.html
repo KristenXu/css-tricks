@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{margin: 0;padding:0;}
+        html, body {
+            min-height: 100% !important;
+            height: 100%;
+        }
+        .outer{
+            width: 80%;
+            height: 100%;
+            background: #ccc;
+            margin: 0 auto;
+            position: relative;
+        }
+        .inner{
+            /*当宽度不确定时，此方法行不通*/
+            width:70%;
+            height: 30%;
+            background: green;
+            position: absolute;
+            top: 0;left:0;right:0;bottom:0;/*让四个定位属性都为0*/
+            margin:auto;/*很关键的一步*/
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+            这个方法，不仅能在inner宽度不确定时发挥作用，还能兼容各种主流浏览器，看上去似乎很完美，
+            但事实上，当我们的需求改为：宽度随内部文字自适应 ，即宽度未设置时，这种方法就无法满足需求了，原因是left、right设为0后，inner在宽度未设置时将占满父元素的宽度。
+        </div>
+    </div>
+</body>
+</html>

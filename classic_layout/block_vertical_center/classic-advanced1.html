@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{margin: 0;padding:0;}
+        html, body {
+            min-height: 100% !important;
+            height: 100%;
+        }
+        .outer{
+            width: 80%;
+            height: 100%;
+            background: #ccc;
+            margin: 0 auto;
+            position: relative;
+        }
+        .inner{
+            width: 70%;
+            height: 30%;
+            background: green;
+            position: absolute;
+            top: 50%;left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        我们的目的是让inner在top和left方向发生50%偏移之后，再往回偏移一定距离，而css里关于位置偏移的属性还有什么呢？当我们查阅最新版的css3属性之后，发现这样一个属性：selector{transform：translate();},translate代表着水平、垂直方向上的转换（位移），
+        其中当括号内的值设为百分比时，将以元素自身宽度为基准，移位相应的宽度，这样一来，我们的问题就得到了解决：
+        这个方法妥善解决了内层div宽度不确定的问题，但由于使用了css3的新属性，在低版本ie浏览器下是不兼容的。由此，我们想到了第三种方法：
+    </div>
+</div>
+</body>
+</html>
