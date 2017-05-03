@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .has-line-num {
+            counter-reset: code-line-num;
+            border: solid 1px #d9d9d9;
+            background: #ddd;
+            padding: 0;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        .sql-code{
+            border: 0;
+            box-shadow: none;
+        }
+        .code-line {
+            display: inline-block;
+            width: 100%;
+            color: #FFF;
+            background-color: #272822;
+        }
+        .code-line::before {
+            content: counter(code-line-num);
+            counter-increment: code-line-num;
+            display: inline-block;
+            width: 2em;
+            padding-right: 1em;
+            margin-right: 16px;
+            text-align: right;
+            color: #aaa;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body onload="initCodeLines()">
+    <pre class="has-line-num">
+            <code class="sql-code">
+    SELECT busi_type,
+         count(1)
+    FROM wedata_fact.selfservice_weiyi_orders_ful
+    WHERE gmt_created_date="2017-03-18"
+    GROUP BY  busi_type
+            </code>
+    </pre>
+<script src="./loadCodeCounts.js"></script>
+</body>
+</html>
