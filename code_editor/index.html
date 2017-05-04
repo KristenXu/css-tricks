@@ -13,6 +13,7 @@
             margin-bottom: 30px;
             white-space: pre;
             overflow-x: auto;
+            background-color: #272822;
         }
         .sql-code{
             border: 0;
@@ -22,7 +23,6 @@
             display: inline-block;
             width: 100%;
             color: #FFF;
-            background-color: #272822;
         }
         .code-line::before {
             content: counter(code-line-num);
@@ -39,13 +39,11 @@
 </head>
 <body onload="initCodeLines()">
     <pre class="has-line-num">
-            <code class="sql-code">
     SELECT busi_type,
          count(1)
-    FROM wedata_fact.selfservice_weiyi_orders_ful
+    FROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_ful
     WHERE gmt_created_date="2017-03-18"
     GROUP BY  busi_type
-            </code>
     </pre>
 <script src="./loadCodeCounts.js"></script>
 </body>

@@ -1,6 +1,5 @@
 let initCodeLines = function () {
-    let codeBlocks = document.querySelectorAll('pre.has-line-num code');
-
+    let codeBlocks = document.getElementsByClassName('has-line-num');
     Array.prototype.forEach.call(codeBlocks, (codeBlock) => {
         codeBlock.innerHTML = codeBlock.textContent
         .trim()
