@@ -7,13 +7,12 @@
         .has-line-num {
             counter-reset: code-line-num;
             border: solid 1px #d9d9d9;
-            background: #ddd;
-            padding: 0;
             line-height: 1.5;
             margin-bottom: 30px;
             white-space: pre;
             overflow-x: auto;
             background-color: #272822;
+            padding: 0 !important;
         }
         .sql-code{
             border: 0;
@@ -36,9 +35,10 @@
             background: #ccc;
         }
     </style>
+    <link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.11.0/styles/tomorrow-night-eighties.min.css">
 </head>
 <body onload="initCodeLines()">
-    <pre class="has-line-num">
+    <pre class="has-line-num sql">
     SELECT busi_type,
          count(1)
     FROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_fulFROM wedata_fact.selfservice_weiyi_orders_ful
@@ -46,5 +46,6 @@
     GROUP BY  busi_type
     </pre>
 <script src="./loadCodeCounts.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
 </body>
 </html>
