@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ellipsis</title>
+    <style>
+        .one-row{
+            width: 200px;
+            height: 36px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .two-row{
+            width: 200px;
+            height: 36px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            box-orient: vertical;
+            -webkit-box-orient: vertical;
+        }
+        .block{
+            width: 200px;
+            height: 200px;
+            background-color: #3899ec;
+        }
+        .inner-block{
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            background-color: #ffff99;
+        }
+    </style>
+</head>
+<body>
+    <!--<p class="one-row">一行文字溢出显示省略号一行文字溢出显示省略号一行文字溢出显示省略号一行文字溢出显示省略号一行文字溢出显示省略号</p>-->
+    <!--<p class="two-row">两行文字溢出显示省略号两行文字溢出显示省略号两行文字溢出显示省略号两行文字溢出显示省略号两行文字溢出显示省略号</p>-->
+    <div class="block" id="outter-block">
+        <div class="inner-block" ></div>
+    </div>
+    <input id="query" type="search" class="k-input k-textbox"
+           x-webkit-speech speech />
+    <script>
+        document.getElementById('outter-block').onclick = function(event) {
+            console.log('event.target', event.target)
+//            console.log('num', num)
+            console.log('arguments', arguments)
+            console.log('this', this)
+        }
+//        function testClick2(num) {
+//            console.log('num', num)
+//        }
+    </script>
+</body>
+</html>
